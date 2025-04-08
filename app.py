@@ -29,33 +29,73 @@ with st.expander("About this dashboard"):
 tab1, tab2 = st.tabs(["Tableau Dashboard", "Data Information"])
 
 with tab1:
-    st.markdown("### Full Interactive Dashboard")
-    st.warning("To display the actual dashboard, publish your Tableau workbook to Tableau Public and replace the URL below.")
+    st.markdown("### London Fire Brigade Dashboard")
     
-    # Your Tableau Public profile
-    profile_url = "https://public.tableau.com/app/profile/cisco.ponce/vizzes"
+    # Display tableau files info
+    st.success("The repository contains the following Tableau workbooks:")
     
-    # When you publish your London Fire Brigade dashboard, replace this URL with the specific dashboard URL
-    # For example: "https://public.tableau.com/views/LondonFireBrigade/Dashboard"
-    dashboard_url = ""
+    # Create columns for the two workbooks
+    col1, col2 = st.columns(2)
     
-    if dashboard_url:
-        # Display the specific dashboard if URL is provided
-        st.success("Showing your London Fire Brigade Dashboard")
-        components.iframe(
-            src=dashboard_url,
-            height=800,
-            scrolling=True
+    with col1:
+        st.markdown("#### Packaged Workbook (TWBX)")
+        st.markdown("`tableau/Final.twbx`")
+        st.markdown("This packaged workbook contains the dashboard visualizations and embedded data.")
+        st.markdown("**Size:** 158 KB")
+        st.download_button(
+            label="Download TWBX File",
+            data=open("tableau/Final.twbx", "rb"),
+            file_name="Final.twbx",
+            mime="application/octet-stream"
         )
-    else:
-        # Display the profile page if no specific dashboard URL is provided yet
-        st.info("Please publish your London Fire Brigade dashboard to Tableau Public and update the URL in app.py")
-        st.markdown(f"[View your Tableau Public Profile]({profile_url})")
-        components.iframe(
-            src=profile_url,
-            height=800,
-            scrolling=True
+    
+    with col2:
+        st.markdown("#### Dashboard Workbook (TWB)")
+        st.markdown("`tableau/London Fire Brigade Operations Dashboard - March 2025.twb`")
+        st.markdown("This is the Tableau workbook file containing the dashboard design without embedded data.")
+        st.markdown("**Size:** 393 KB")
+        st.download_button(
+            label="Download TWB File",
+            data=open("tableau/London Fire Brigade Operations Dashboard - March 2025.twb", "rb"),
+            file_name="LFB_Dashboard.twb",
+            mime="application/octet-stream"
         )
+    
+    # Dashboard preview section
+    st.markdown("---")
+    st.markdown("### Dashboard Preview")
+    
+    # Dashboard components tabs
+    dash_tabs = st.tabs(["Overview", "Station Analysis", "Firefighter Allocation", "Response Times", "Geographic Distribution"])
+    
+    with dash_tabs[0]:  # Overview tab
+        st.markdown("#### Dashboard Overview")
+        st.info("📊 This dashboard provides a comprehensive overview of London Fire Brigade operations including station performance, firefighter allocation, and incident distribution.")
+        
+        # Placeholder metrics until screenshots are added
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Total Incidents", "217,542", "5.4%")
+        with col2:
+            st.metric("Response Time", "6:48 min", "-0:42 min")
+        with col3:
+            st.metric("False Alarms", "108,771", "-2.1%", delta_color="inverse")
+        
+        st.markdown("##### 📊 Add dashboard screenshots")
+        st.info("To improve this preview, add dashboard screenshots to the '/images' folder and update this section.")
+    
+    with dash_tabs[1]:  # Station Analysis
+        st.markdown("#### Station Callouts Analysis")
+        st.info("📈 The Station Callouts visualization shows the distribution of genuine incidents across fire stations using a treemap.")
+        
+        # Sample data table
+        st.markdown("##### Top 5 Stations by Incident Count")
+        sample_data = {
+            "Station": ["Soho", "Lambeth", "Shoreditch", "Euston", "Paddington"],
+            "Incidents": [4127, 3954, 3812, 3651, 3520],
+            "Change": ["+2.4%", "+1.8%", "-0.7%", "+3.2%", "+0.5%"]
+        }
+        st.dataframe(sample_data)
 
 with tab2:
     st.markdown("### Data Sources")
