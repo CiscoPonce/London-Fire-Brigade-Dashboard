@@ -3,6 +3,10 @@
 ## Overview
 This repository contains an interactive Tableau dashboard that visualizes operations data for the London Fire Brigade (LFB). The dashboard provides stakeholders with comprehensive insights into emergency response activities, resource allocation, and performance metrics across London's fire stations.
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-streamlit-url-here)
+
+> **Note:** The Streamlit app allows you to view the dashboard directly in your browser without Tableau Desktop. See the [Streamlit Deployment Guide](STREAMLIT_DEPLOYMENT.md) for details.
+
 ## Dashboard Components
 
 ### 1. Station Callouts (Treemap)
@@ -31,6 +35,13 @@ Plots incidents across London with detailed tooltips providing incident context,
 
 ## Technical Implementation
 The dashboard connects to a SQL Server database containing the LFB operational data structured according to the entity-relationship model in the /documentation folder. Queries used to extract the data can be found in the /sql folder.
+
+### Repository Structure
+- `/tableau`: Contains the Tableau workbook files
+- `/sql`: SQL queries used to extract data
+- `/images`: Dashboard screenshots
+- `app.py`: Streamlit application for web-based dashboard viewing
+- `requirements.txt`: Dependencies for the Streamlit app
 
 ## Screenshots
 ![Dashboard Overview](/images/dashboard_overview.png)
