@@ -35,7 +35,7 @@ with tab1:
     st.success("London Fire Brigade Operations Dashboard")
     
     # Tableau Public URL for the dashboard
-    tableau_url = "https://public.tableau.com/app/profile/cisco.ponce/viz/LondonFireBrigadeOperationsDashboard-March2025/LondonFireBrigadeOperationsDashboard-March2025"
+    tableau_url = "https://public.tableau.com/views/LondonFireBrigadeOperationsDashboard-March2025/LondonFireBrigadeOperationsDashboard-March2025?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
     
     # Display the dashboard in an iframe
     st.markdown("""
