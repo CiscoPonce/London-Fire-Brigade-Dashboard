@@ -32,15 +32,30 @@ with tab1:
     st.markdown("### Full Interactive Dashboard")
     st.warning("To display the actual dashboard, publish your Tableau workbook to Tableau Public and replace the URL below.")
     
-    # Replace with your actual Tableau Public URL when you have it
-    tableau_url = "https://public.tableau.com/views/YourDashboardName/Dashboard"
+    # Your Tableau Public profile
+    profile_url = "https://public.tableau.com/app/profile/cisco.ponce/vizzes"
     
-    # Placeholder for the iframe that will hold your Tableau dashboard
-    components.iframe(
-        src=tableau_url, 
-        height=800, 
-        scrolling=True
-    )
+    # When you publish your London Fire Brigade dashboard, replace this URL with the specific dashboard URL
+    # For example: "https://public.tableau.com/views/LondonFireBrigade/Dashboard"
+    dashboard_url = ""
+    
+    if dashboard_url:
+        # Display the specific dashboard if URL is provided
+        st.success("Showing your London Fire Brigade Dashboard")
+        components.iframe(
+            src=dashboard_url,
+            height=800,
+            scrolling=True
+        )
+    else:
+        # Display the profile page if no specific dashboard URL is provided yet
+        st.info("Please publish your London Fire Brigade dashboard to Tableau Public and update the URL in app.py")
+        st.markdown(f"[View your Tableau Public Profile]({profile_url})")
+        components.iframe(
+            src=profile_url,
+            height=800,
+            scrolling=True
+        )
 
 with tab2:
     st.markdown("### Data Sources")
