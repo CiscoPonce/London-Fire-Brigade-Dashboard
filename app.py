@@ -68,23 +68,17 @@ tableau_html = '''
 <script type='text/javascript'>
     var divElement = document.getElementById('viz1744131858257');
     var vizElement = divElement.getElementsByTagName('object')[0];
-    if ( divElement.offsetWidth > 800 ) { 
-        vizElement.style.width='100%';
-        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-    } else if ( divElement.offsetWidth > 500 ) { 
-        vizElement.style.width='100%';
-        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-    } else { 
-        vizElement.style.width='100%';
-        vizElement.style.height='1827px';
-    }
+    // Set fixed dimensions to ensure full dashboard visibility
+    vizElement.style.width='100%';
+    vizElement.style.height='1600px'; // Increased fixed height to show entire dashboard
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 '''
 
-st.components.v1.html(tableau_html, height=1000, scrolling=True)
+# Use a larger height and set scrolling to false to see the whole dashboard
+st.components.v1.html(tableau_html, height=1200, scrolling=False)
 
 # Display download links for local files
 st.markdown("---")
