@@ -124,26 +124,35 @@ with tab2:
     st.markdown("""
     This dashboard visualizes data from the London Fire Brigade operational database, including:
     
-    - 102 fire stations across London
-    - 5,000+ operational firefighters
-    - Incident records with response times and durations
-    - Multi-agency coordination data
-    - Appliance deployment information
+    * 103 fire stations across London
+    * 5,700+ operational firefighters
+    * Emergency incident records with precise response times
+    * Cross-agency coordination records
+    * Vehicle deployment and allocation data
     
     The data has been processed using SQL Server and visualized with Tableau.
     """)
     
     st.markdown("### Key Metrics")
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.metric(label="Total Incidents", value="217,000+", delta="2021-2023")
-    
-    with col2:
-        st.metric(label="Actual Fires", value="33,000+", delta="15% of total")
-    
-    with col3:
-        st.metric(label="False Alarms", value="108,000+", delta="50% of total", delta_color="inverse")
+    st.markdown("""
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <p><strong>Total Incidents</strong></p>
+            <h2>82,500+</h2>
+            <p style="color: green;">↑ 3% from previous year</p>
+        </div>
+        <div>
+            <p><strong>Emergency Responses</strong></p>
+            <h2>37,600+</h2>
+            <p style="color: green;">↑ 45% of total calls</p>
+        </div>
+        <div>
+            <p><strong>False Alarms</strong></p>
+            <h2>24,750+</h2>
+            <p style="color: red;">↑ 30% of total calls</p>
+        </div>
+    </div>
+    """)
 
 # Footer
 st.markdown("---")
