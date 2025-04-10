@@ -39,7 +39,6 @@ The dashboard connects to a SQL Server database containing the LFB operational d
 ### Repository Structure
 - `/tableau`: Contains the Tableau workbook files
 - `/sql`: SQL queries used to extract data
-- `/images`: Dashboard screenshots
 - `app.py`: Streamlit application for web-based dashboard viewing
 - `requirements.txt`: Dependencies for the Streamlit app
 
