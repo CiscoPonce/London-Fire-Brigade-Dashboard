@@ -3,7 +3,7 @@
 ## Overview
 This repository contains an interactive Tableau dashboard that visualizes operations data for the London Fire Brigade (LFB). The dashboard provides stakeholders with comprehensive insights into emergency response activities, resource allocation, and performance metrics across London's fire stations.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-streamlit-url-here)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://london-fire-brigade-dashboard-nvt8pz5kpbqcx2cqddxdez.streamlit.app/)
 
 > **Note:** The Streamlit app allows you to view the dashboard directly in your browser without Tableau Desktop. See the [Streamlit Deployment Guide](STREAMLIT_DEPLOYMENT.md) for details.
 
@@ -44,8 +44,21 @@ The dashboard connects to a SQL Server database containing the LFB operational d
 - `requirements.txt`: Dependencies for the Streamlit app
 
 ## Screenshots
-![Dashboard Overview](/images/dashboard_overview.png)
-(Additional screenshots in the /images folder)
+
+View the live dashboard on Tableau Public:
+
+[![Tableau Dashboard](https://public.tableau.com/static/images/Lo/LondonFireBrigadeOperationsDashboard-March2025/LondonFireBrigadeOperationsDashboard-March2025/1_rss.png)](https://public.tableau.com/views/LondonFireBrigadeOperationsDashboard-March2025/LondonFireBrigadeOperationsDashboard-March2025)
+
+### Dashboard Components:
+
+1. **Station Callouts** - Treemap visualization of incident distribution across fire stations
+2. **Firefighter Response Analysis** - Deployment patterns by rank and role
+3. **Appliance Utilization** - Distribution of incidents by vehicle type
+4. **Multi-Agency Coordination** - Network visualization of emergency service collaboration
+5. **Response Time Analysis** - Performance metrics by station
+6. **Geographic Incident Distribution** - Spatial analysis of incidents across London
+
+The dashboard demonstrates the integration of multiple data sources to provide actionable intelligence for emergency service management.
 
 ## Data Source
 This dashboard uses simulated data based on the London Fire Brigade operational model. The data structure includes:
